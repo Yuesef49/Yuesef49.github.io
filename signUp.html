@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+            background-color: rgb(188, 229, 242);
+            }
+            
+            input[type=text], input[type=password], input[type=email]  {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+            }
+            input[type=radio]{
+                display:table-column-group
+            }
+            .submitButton{
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1 class="logo">GGW</h1>
+        <nav>
+            <a href="home.html">Home</a> |
+            <a href="signIn.html">Sign In</a> |
+            <a href="signUp.html">Sign Up</a> |
+            <a href="yourList.html">Your List</a>
+        </nav>
+        <hr>
+        <form>
+            
+                <div>
+                    <label for="Username">
+                    <b>Username</b>
+                    </label>
+                    <input type="text" placeholder="Enter username (userID)" name="username" required="">
+                
+               <label for="Password">
+                    <b>Password</b>
+                    </label>
+                <input type="password" placeholder="Enter password" name="password" required="">
+            </div>
+            
+             
+           
+            
+           
+            <label for="Name">
+                <b>Name</b>
+            </label>
+            <input type="text" placeholder="Name Surname" name="name" required="">
+    
+            <label for="Address">
+                <b>Address</b>
+            </label>
+            <input type="text" placeholder="" name="Address" required="">
+    
+            <label for="Country">
+                <b>Country</b>
+            </label>
+            <input type="text" placeholder="eg: Netherlands" name="Country" required="">
+    
+            <label for="ZipCode">
+                <b>Zip Code</b>
+            </label>
+            <input type="text" placeholder="eg: 1234 AD" name="" required="">
+    
+            <label for="Email">
+                <b>Email</b>
+            </label>
+            <input type="email" placeholder="eg: example@gmail.com" name="" required="">
+    
+            <label for="Gender">
+                <b>Gender</b>
+                <div></div>
+            </label>
+            <input type="radio" id="male" name="Gender" required="">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="Gender" required="">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="Gender" required="">
+            <label for="other">Non-binary</label><br>    
+        </form>
+        <input class="submitButton" type="submit" value="Submit">
+        
+
+    </body>
+</html>
