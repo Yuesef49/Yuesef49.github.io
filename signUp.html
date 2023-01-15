@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <link href="StyleSheet.css" rel="stylesheet" type="text/css">
     <head>
         <style>
             body {
-                background-color: rgb(188, 229, 242);
+            background-color: rgb(188, 229, 242);
+			 background-image: url('BackgroundImage.jpg');
+			 background-repeat: no-repeat;
+			 background-attachment: fixed;
+			 background-size: cover;
             }
+			
+			
+			.header{
+			overflow: hidden;
+			padding: 10px 5px;
+			
+			}
+            .header a {
+			text-align: center;
+			float: left;
+			color: gray;
+		  
+		  padding: 8px;
+		  text-decoration: none; /*To make it not underlined. */
+		  font-size: 28px;
+		  line-height: 30px;
+		  border-radius: 6px;
+			}
+
+		.header a.logo {
+		  font-size: 25px;
+		  font-weight: bold;
+			}
+
+		.header a:hover {
+		  background-color: #ddd;
+		  color: black;
+			}
+
+
+		.header a.active {
+		  background-color: dodgerblue;
+		  color: white;
+			}
+
+
             input[type=text], input[type=password], input[type=email]  {
-            width: 100%;
+            width: 40%;
             padding: 15px;
             margin: 5px 0 22px 0;
             display: inline-block;
@@ -20,21 +59,34 @@
             .submitButton{
                 margin-top: 20px;
             }
-            
+			.navigator a{
+			text-decoration: none;
+			text
+			}
+			.navigator a:link{
+			color: red;
+			}
+			.navigator a:visited{
+			color: green;
+			}
+			
+			.navigator a:active {
+			color: blue;
+			}
+			
         </style>
     </head>
     
     <body>
-        <div class="logo">
-            <h1 class="logo">GGW</h1>
-            <nav>
-             <a href="home.html">Home</a> |
-             <a href="signIn.html">Sign In</a> |
-             <a href="signUp.html">Sign Up</a> |
-             <a href="yourList.html">Your List</a>
-            </nav>
-        </div>
-        
+        <div class="header">
+		<a href="https://www.youtube.com/watch?v=zWUj58XSvzw class="logo" target="_blank">GGW</a>
+		</div>
+        <nav class="navigator">
+            <a href="home.html">Home</a> |
+            <a href="signIn.html">Sign In</a> |
+            <a href="signUp.html">Sign Up</a> |
+            <a href="yourList.html">Your List</a>
+        </nav>
         <hr>
         <form>
             
@@ -42,10 +94,12 @@
                     <label for="Username">
                     <b>Username</b>
                     </label>
+					<br>
                     <input type="text" placeholder="Enter username (userID)" name="username" required="">
-                
+                <br>
                <label for="Password">
                     <b>Password</b>
+					<br>
                     </label>
                 <input type="password" placeholder="Enter password" name="password" required="">
             </div>
@@ -53,34 +107,40 @@
              
            
             
-           
+           <br>
             <label for="Name">
                 <b>Name</b>
+				<br>
             </label>
             <input type="text" placeholder="Name Surname" name="name" required="">
-    
+			<br>
             <label for="Address">
                 <b>Address</b>
+				<br>
             </label>
             <input type="text" placeholder="" name="Address" required="">
-    
+			<br>
             <label for="Country">
                 <b>Country</b>
+				<br>
             </label>
             <input type="text" placeholder="eg: Netherlands" name="Country" required="">
-    
+			<br>
             <label for="ZipCode">
                 <b>Zip Code</b>
+				<br>
             </label>
             <input type="text" placeholder="eg: 1234 AD" name="" required="">
-    
+			<br>
             <label for="Email">
                 <b>Email</b>
+				<br>
             </label>
             <input type="email" placeholder="eg: example@gmail.com" name="" required="">
-    
+			<br>
             <label for="Gender">
                 <b>Gender</b>
+				<br>
                 <div></div>
             </label>
             <input type="radio" id="male" name="Gender" required="">
@@ -90,9 +150,7 @@
             <input type="radio" id="other" name="Gender" required="">
             <label for="other">Non-binary</label><br>    
         </form>
-        <a href="home.html">
-            <input class="submitButton" type="submit" value="Submit">
-        </a>
+        <input class="submitButton" type="submit" value="Submit">
         
 
     </body>
