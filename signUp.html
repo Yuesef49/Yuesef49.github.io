@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css">
     <head>
         <style>
             body {
-            background-color: rgb(188, 229, 242);
+                background-color: rgb(188, 229, 242);
             }
-            
             input[type=text], input[type=password], input[type=email]  {
             width: 100%;
             padding: 15px;
@@ -20,17 +20,21 @@
             .submitButton{
                 margin-top: 20px;
             }
+            
         </style>
     </head>
     
     <body>
-        <h1 class="logo">GGW</h1>
-        <nav>
-            <a href="home.html">Home</a> |
-            <a href="signIn.html">Sign In</a> |
-            <a href="signUp.html">Sign Up</a> |
-            <a href="yourList.html">Your List</a>
-        </nav>
+        <div class="logo">
+            <h1 class="logo">GGW</h1>
+            <nav>
+             <a href="home.html">Home</a> |
+             <a href="signIn.html">Sign In</a> |
+             <a href="signUp.html">Sign Up</a> |
+             <a href="yourList.html">Your List</a>
+            </nav>
+        </div>
+        
         <hr>
         <form>
             
@@ -86,7 +90,9 @@
             <input type="radio" id="other" name="Gender" required="">
             <label for="other">Non-binary</label><br>    
         </form>
-        <input class="submitButton" type="submit" value="Submit">
+        <a href="home.html">
+            <input class="submitButton" type="submit" value="Submit">
+        </a>
         
 
     </body>

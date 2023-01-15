@@ -4,7 +4,37 @@
         <style>
             body {
                 background-color: rgb(188, 229, 242);
+                text-align: center;
             }
+            .loginBox{
+                text-align: center;
+                overflow: hidden;
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+            }
+            .logIn{
+                line-height: 1.5;
+                font-weight: 400;
+                font-family: "Lato", Arial, sans-serif;
+                color: #000;
+                margin-left: 1rem;
+            }
+            .userNameBox{
+                text-align: center;
+                margin-left: 1rem;
+                margin-bottom: 1rem;
+            }
+            .button1{
+                text-align: center;
+            }
+            .buttinItself{
+                color: #000;
+            }
+            .name{
+                margin-bottom: 3px;
+            }
+        
         </style>
     </head>
     <body>
@@ -16,5 +46,33 @@
             <a href="yourList.html">Your List</a>
             </nav>
             <hr>
+            <div class="loginBox">
+                <div class="logInName">
+                    <h3 class="logIn">Log In</h3>
+                </div>
+                <div class="userNameBox">
+                    <div class="name">
+                        <label>Username</label>
+                    </div>
+                    
+                    <div>                   
+                        <input type="text" placeholder="Enter your username">
+                    </div>
+                </div>
+                <div class="userNameBox">
+                    <div class="name">
+                        <label>Password</label>
+                    </div>
+                    <div>                   
+                        <input type="password" placeholder="Enter Password">
+                    </div>
+                </div>
+                <div class="userNameBox">
+                    <div class="button1">
+                        <a href="home.html"><button class="buttinItself">Log In</button> </a>
+                    </div>
+                </div>
+                
+            </div>
     </body>
 </html>
