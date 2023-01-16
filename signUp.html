@@ -81,19 +81,25 @@
 			.navigator a:active {
 			color: red;
 			}
+			.navigator a:hover{
+			color: white;
+			}
             .formFillPlace{
-				
                 margin: auto;
                 width: auto;
 				max-width: 800px;
 				color: white;
 				background-color: rgba(0, 0, 0, 0.351);
-               padding: 5px;
+               padding: 15px;
 			   font-weight: bolded;
 			   font-size: 18px;	
+			   border: 3px;
+				border-color:rgba(0, 0, 0, 0.351);
+                border-radius: 10px;
             }
 			.formFillPlace b{
                 padding: 5px;
+				font-weight: normal;
             }
 			
             
@@ -106,16 +112,15 @@
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
+			transition-duration: 0.8s;
 			font-size: 16px;
 			margin: 4px 2px;
-			transition-duration: 0.4s;
 			cursor: pointer;
 				}
 				.submitButton {
 				margin-top: 20px;
 				background-color: rgba(255, 255, 255, 0.24); 
 				color: black; 
-				border: 2px solid #F4A5A5;
 				width: 200px;
 				height: 30px;
 				text-align:center;
@@ -125,6 +130,7 @@
 		.submitButton:hover {
 			background-color: #f44336;
 			color: white;
+			border-radius: 7px;
 			}
 			
 			
@@ -139,7 +145,7 @@
             <a href="signUp.html" >Sign Up</a> |
             <a href="yourList.html">Your List</a>
         </nav>
-        <hr>
+        
         <form>
             
         <div class="formFillPlace">
@@ -148,13 +154,13 @@
                     <b>Username</b>
                     </label>
 					<br>
-                    <input type="text" placeholder="Enter username (userID)" name="username" required="">
+                    <input type="text" placeholder="username (userID)" name="username" required="">
                 <br>
                <label for="Password">
                     <b>Password</b>
 					<br>
                     </label>
-                <input type="password" placeholder="Enter password" name="password" required="">
+                <input type="password" placeholder="password" name="password" required="">
             
             
              
@@ -165,13 +171,13 @@
                 <b>Name</b>
 				<br>
             </label>
-            <input type="text" placeholder="Name Surname" name="name" required="">
+            <input type="text" placeholder="your name and surname" name="name" required="">
 			<br>
             <label for="Address">
                 <b>Address</b>
 				<br>
             </label>
-            <input type="text" placeholder="" name="Address" required="">
+            <input type="text" placeholder="eg: Mekelweg 4, Delft" name="Address" required="">
 			<br>
             <label for="Country">
                 <b>Country</b>
@@ -185,6 +191,12 @@
             </label>
             <input type="text" placeholder="eg: 1234 AD" name="" required="">
 			<br>
+			<label for="Language">
+                <b>Language</b>
+				<br>
+            </label>
+            <input type="text" placeholder="eg: English, Dutch..." name="" required="">
+			<br>
             <label for="Email">
                 <b>Email</b>
 				<br>
@@ -194,7 +206,6 @@
             <label for="Gender">
                 <b>Gender</b>
 				<br>
-                <div></div>
             </label>
             <input type="radio" class="male" name="Gender" required="">
             <label for="male">Male</label>
