@@ -3,18 +3,24 @@
     <head>
         <style>
             body {
-                background-color: rgb(188, 229, 242);
-                text-align: center;
+             background-color: rgb(188, 229, 242);
+			 background-image: url('BackgroundImage.jpg');
+			 background-repeat: no-repeat;
+			 background-attachment: fixed;
+			 background-size: cover;
+			 text-align: center;
             }
 
             .loginBox{
-                width: 50%;
+                width: 150%;
                 margin: auto;
                 overflow: hidden;
-                background: white;
+                background: rgba(255, 255, 255, 0.24);
                 border-radius: 5px;
                 box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
-                max-width: 200px;
+                max-width: 400px;
+				height: 500px;
+				
                 
             }
             .logIn{
@@ -22,7 +28,7 @@
                 font-weight: 400;
                 font-family: "Lato", Arial, sans-serif;
                 color: #000;
-                margin-left: 0rem;
+               
             }
             .userNameBox{
                 text-align: center;
@@ -33,20 +39,49 @@
             }
             .name{
                 margin-bottom: 3px;
+				font-size: 22px;
             }
             button{
-                background-color: rgba(169, 43, 215, 0.341);
+                background-color: rgba(255, 255, 255, 0.141);
                 border: #000;
                 border-radius: 2px;
                 width: 60px;
             }
+			.navBar{
+                margin-top: 20px;
+				font-size: 18px;
+				background-color: rgba(255, 255, 255, 0.1);
+				width: min content;
+				width: 300px;
+				margin: 1em auto;
+
+				padding: 1em;
+				
+				
+				align: center;
+            }
+			.navBar a:visited{
+			color: pink;
+			}
+			
+			.navBar a:active {
+			color: red;
+			}
+			.passwordInput{
+			width: 340px;
+			height: 40px;
+			}
+			.usernameInput{
+			width: 340px;
+			height: 40px;
+			}
             
         
         </style>
     </head>
     <body>
-        <h1 class="logo">GGW</h1>
-        <nav>
+    
+        <nav class= "navBar">
             <a href="home.html">Home</a> |
             <a href="signIn.html">Sign In</a> |
             <a href="signUp.html">Sign Up</a> |
@@ -63,7 +98,7 @@
                     </div>
                     
                     <div>                   
-                        <input type="text" placeholder="Enter your username">
+                        <input type="text" class="usernameInput" placeholder="enter your username">
                     </div>
                 </div>
                 <div class="userNameBox">
@@ -71,7 +106,7 @@
                         <label>Password</label>
                     </div>
                     <div>                   
-                        <input type="password" placeholder="Enter Password">
+                        <input type="password" class= "passwordInput" placeholder="enter password">
                     </div>
                 </div>
                 <div class="userNameBox">

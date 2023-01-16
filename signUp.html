@@ -14,6 +14,12 @@
 			.header{
 			overflow: hidden;
 			padding: 10px 5px;
+			border-radius: 6px;			
+			}
+			.navigator{
+			font-size: 18px;
+			background-color: rgba(255, 255, 255, 0.1);
+			width: 18%;
 			
 			}
             .header a {
@@ -60,23 +66,31 @@
             }
 			.navigator a{
 			    text-decoration: none;
+				color: #073D41;
+				font-weight: bolded;
 			}
 			
 			.navigator a:visited{
-			color: green;
+			color: pink;
 			}
 			
 			.navigator a:active {
-			color: blue;
+			color: red;
 			}
             .formFillPlace{
                 margin: auto;
                 width: 50%;
-            }
-            .formFillPlace{
-               background-color: rgba(197, 219, 226, 0.351);
+				color: white;
+				background-color: rgba(197, 219, 226, 0.351);
                padding: 5px;
+			   font-weight: bolded;
+			   font-size: 18px;	
             }
+            
+			.submitButton{
+			align: center;
+			}
+			
 			
         </style>
     </head>
@@ -86,9 +100,9 @@
 		<a href="https://www.youtube.com/watch?v=zWUj58XSvzw class="logo" target="_blank">GGW</a>
 		</div>
         <nav class="navigator">
-            <a href="home.html">Home</a> |
+            <a href="home.html" >Home</a> |
             <a href="signIn.html">Sign In</a> |
-            <a href="signUp.html">Sign Up</a> |
+            <a href="signUp.html" >Sign Up</a> |
             <a href="yourList.html">Your List</a>
         </nav>
         <hr>
@@ -147,15 +161,16 @@
 				<br>
                 <div></div>
             </label>
-            <input type="radio" id="male" name="Gender" required="">
+            <input type="radio" class="male" name="Gender" required="">
             <label for="male">Male</label><br>
-            <input type="radio" id="female" name="Gender" required="">
+            <input type="radio" class="female" name="Gender" required="">
             <label for="female">Female</label><br>
-            <input type="radio" id="other" name="Gender" required="">
+            <input type="radio" class="other" name="Gender" required="">
             <label for="other">Non-binary</label><br>
+			 <input class="submitButton" type="submit" value="Submit">
         </div>    
         </form>
-        <input class="submitButton" type="submit" value="Submit">
+       
         
 
     </body>
