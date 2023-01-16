@@ -37,7 +37,7 @@
 			color: white;
 			}
             .goalBox{
-                
+                width: 100%;
                 padding: 3px;
                 border: 3px solid rgba(0, 0, 0, 0.341);
 				background: rgba(255, 255, 255, 0.24);
@@ -48,7 +48,7 @@
 			width: 50%;
 			padding: 5px;
 			align-self: center;
-			width: 30%;
+			width: 60%;
             border-radius: 10px;
             margin-bottom: 3px;
 			background: rgba(255, 255, 255, 0.24);
@@ -126,6 +126,13 @@
 				font-size: 14px;
                 border-radius: 4px;
             }
+            #table1{
+                border-collapse: collapse;
+                border: 1px solid;
+            }
+            input[type=checkbox]{
+                
+            }
 
 			
         </style>
@@ -139,42 +146,8 @@
             </nav>
             
             <div class="List">
-                <div class="CurrentGoals">
-                    <div class="goalBox">
-                        <table>
-						<div class="delItem">
-                                        <button id="delButton" type="button">x</button>
-                                    </div>
-                            <tr>
-                                <td><h3 style= "text-align: left; margin-top: 0; margin-bottom: 2px;">Take your pills!</h3></td>
-                            </tr>
-                        </table>
-                        
-                       
-                           <table>
-                            <tr>
-                                <th>Description:</th>
-                                <td>I need to take my pills every day</td>
-                            </tr>
-                            <tr>
-                                <th>Measurement:</th>
-                                <td>One at 9:00 AM, one at 9:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td>Person:</td>
-                                <td>Me</td>
-                            </tr>
-                            <tr>
-                                <td>Result:</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Deadline:</td>
-                                <td>-</td>
-                            </tr>
-                           </table>
-                     
-                    </div>
+                <div>
+                    Now break your goal into small achievable targets!
                 </div>
                 <div class="CurrentGoals">
                     <div class="goalBox">
@@ -185,9 +158,8 @@
                             <tr>
                                 <td><h3 style= "text-align: left; margin-top: 0; margin-bottom: 2px;">Pass The Calculus</h3></td>
                             </tr>
+    
                         </table>
-                        
-                        
                            <table>
                             <tr>
                                 <th>Description:</th>
@@ -209,16 +181,33 @@
                                 <td>Deadline:</td>
                                 <td>19-02-2023</td>
                             </tr>
+
+                            
                            </table>
-                           <div class="targetButtonBox">
-                               <a href="targets.html"></a> <button id="targetButton">Specify into Targets</button>
-                           </div>
+                           <hr>
+                           <table id="table1">
+                            <tr>
+                                <th style="border: 1px solid;"> </td>
+                                <th style="border: 1px solid;"> Description </td>
+                                <th style="border: 1px solid;"> Done? </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid;">Target 1</td>
+                                <td style="border: 1px solid;">Finish all lectures</td>
+                                <td style="border: 1px solid;"> <input type="checkbox"> </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid;">Target 2</td>
+                                <td style="border: 1px solid;"> <input type="text" placeholder="Enter a target"> </td>
+                                <td style="border: 1px solid;"></td>
+                            </tr>
+                           </table>
                     </div>
                 </div>
                 
             
                     <br>
-                    <a href="addNewGoal.html"><button class= "button Button1"type="button">Input the New Goal</button> </a>
+                    <a href="addNewGoal.html"><button class= "button Button1"type="button">Save</button> </a>
 
             </div>
             
