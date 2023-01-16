@@ -4,3 +4,9 @@ body {
 .logo{
     text-align: center;
 }
+button{
+    background-color: rgba(169, 43, 215, 0.341);
+    border: #000;
+    border-radius: 2px;
+    width: 60px;
+}

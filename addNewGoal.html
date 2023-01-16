@@ -20,12 +20,21 @@
                 width: 100px;
             }
             .addNewGoal{
-               
                 width: 10%;
                 margin: auto;
             }
             .inputField{
-                margin-top: -10px;
+               margin: auto;
+                
+            }
+            input[type = text]{
+                width: 95%;
+            }
+            label{
+                font-weight: 700;
+            }
+            .goal{
+                padding: 10px;
             }
         </style>
     </head>
@@ -43,25 +52,41 @@
                 <div class="CurrentGoals">
                     <div class="goalBox">
                         <div class="goal">
-                            <h4>Goal title</h4>
+                            <label>Goal title</label>
                             <div class="inputField">
-                                <input type="text" placeholder=" Enter a goal title">
+                                <input type="text" placeholder="Enter a goal title">
                             </div>
                         </div>
                         <div class="goal">
-                            <h4>Goal title</h4>
-                            <input type="text" placeholder=" Enter a goal title">
+                            <label>(S)et a specific goal</label>
+                            <div class="inputField">
+                                <input type="text" placeholder="It should not be vague">
+                            </div>                        
                         </div>
                         <div class="goal">
-                            <h4>Goal title</h4>
-                            <input type="text" placeholder=" Enter a goal title">
+                            <label>(M)easure it!</label>
+                            <div class="inputField">
+                                <input type="text" placeholder="Suggest an indicator of progress">
+                            </div>                        
                         </div>
                         <div class="goal">
-                            <h4>Goal title</h4>
-                            <input type="text" placeholder=" Enter a goal title">
+                            <label>(A)ssign it!</label>
+                            <div class="inputField">
+                                <input type="text" placeholder="Specify who will do it">
+                            </div>
                         </div>
-                        
-                        
+                        <div class="goal">
+                                <label>(R)eailistic</label>
+                            <div class="inputField">
+                                <input type="text" placeholder="State what results can realistically be achieved, given available resources">
+                            </div>                      
+                        </div>
+                        <div class="goal">
+                            <label>(T)ime bound</label>
+                        <div class="inputField">
+                            <input type="date" placeholder="">
+                        </div>                      
+                    </div>    
                     </div>
                 </div>
                 <div class="addNewGoal">
