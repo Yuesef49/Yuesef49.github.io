@@ -17,16 +17,24 @@ function passwordRequirement()
     return true;
 }
 
-let passwordParameters = {
-    count : false,
-    characters : false
-}
-let strengthbar = document.getElementById("strengthbar");
-let strengthbarText = document.getElementById("strengthbarText");
 
-function passwordChecker()
+
+
+let strengthbar = document.getElementById("strengthbar");
+
+function passwordChecker(password)
 {
-    var password = document.getElementById("signUpPassword").value;
+    var count = false;
+    var characters =true;
+    
+    var strengthbarText = document.getElementById("strengthbarText");
+
+    if(password.length == 0)
+    {
+        strengthbarText.innerHTML = "Please enter the password";
+        return;
+    }
+
     var regArray = new Array();
     var flag = false;
       regArray.push("[A-Z]"); //Uppercase Alphabet.
@@ -35,44 +43,60 @@ function passwordChecker()
       regArray.push("[$@$!%*#?&]"); //Special Character.
 
       var checker = new Array();
-      checker.push(1);
-      checker.push(1);
-      checker.push(1);
-      checker.push(1);
-
+      checker.push(0);
+      checker.push(0);
+      checker.push(0);
+      checker.push(0);
+ 
       
       for(var i = 0; i < regArray.length; i++)
       {
-        if(!(new RegExp(regex[i]).test(password))){
-            checker[i] = 0;
-            passwordParameters.characters = false;
+
+        if(new RegExp(regArray[i]).test(password)){
+            checker[i] = 1;
+
         }
       }
-      passwordParameters.count = (password.length < 12) ? true : false;
-      if( (passwordParameters.count == true) && (passwordParameters.characters == true)  )
+    if(checker.includes(0))
+    {
+        characters = false;
+    }
+      if(password.length >= 12)
       {
-        flag = true;
+        count = true;
+
       }
-      if(flag = true)
+
+      if((count == true) && (characters == true))
       {
-        strengthbarText.textContent = "Password passes the requirements!";
+
+        flag = true;
+
+      }
+      if(flag == true)
+      {
+        strengthbarText.innerHTML = "Password passes the requirements!";
       }
       else{
-        strengthbarText.textContent = "Password should include ";
+        strengthbarText.innerHTML = "Password should include: ";
         if(checker[0] == 0)
       {
-        strengthbarText.textContent = strengthbarText.textContent + "Uppercase letter, ";
+        strengthbarText.innerHTML = strengthbarText.textContent + "Uppercase letter, ";
       }
       if(checker[1] == 0)
       {
-        strengthbarText.textContent = strengthbarText.textContent + "Lowercase letter, "
+        strengthbarText.innerHTML = strengthbarText.textContent + "Lowercase letter, "
       }
       if(checker[2] == 0)
       {
-        strengthbarText.textContent = strengthbarText.textContent + "Digit, ";
+        strengthbarText.innerHTML = strengthbarText.textContent + "Digit, ";
       }
       if(checker[3] == 0){
-        strengthbarText.textContent = strengthbarText.textContent + "Special character!";
+        strengthbarText.innerHTML = strengthbarText.textContent + "Special character, ";
+      }
+      if(count == false)
+      {
+        strengthbarText.innerHTML = strengthbarText.textContent + "At least 12 characters";
       }
       }
       
