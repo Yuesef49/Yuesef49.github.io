@@ -136,8 +136,25 @@
 			color: white;
 			border-radius: 7px;
 			}
-			
-			
+
+			#strengthbar{
+				background-color: #dcdcdc;
+				height: 20px;
+				border-radius: 0 0 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 0;
+				margin-bottom: 22px;
+			}
+			#strengthbarText{
+				font-weight: bold;
+			   font-size: 16px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
         </style>
     </head>
     
@@ -155,42 +172,47 @@
 				<hr style="visibility:hidden;" />  <!--Knk bu ne la?-->
                 <b>Username</b>
             </label>
-                    <input id="signUpUsername" type="text" placeholder="username (userID)" name="username" required="">
+                    <input id="signUpUsername" type="text" placeholder="username (userID)" name="username">
 
             <label for="Password">
                 <b>Password</b>
             </label>
-            <input id="signUpPassword" type="password" placeholder="password" name="password" required="">
-			
+            <input id="signUpPassword" type="password" placeholder="password" name="password" style="margin-bottom: 0;" oninput="passwordChecker()">
+			<div id="strengthbar">
+				<div>
+					<p id="strengthbarText">Sample Text</p>
+				</div>
+			</div>
+
             <label for="Name">
                 <b>Name</b>
             </label>
-            <input type="text" placeholder="your name and surname" name="name" required="">
+            <input type="text" placeholder="your name and surname" name="name">
 
             <label for="Address">
                 <b>Address</b>
             </label>
-            <input type="text" placeholder="eg: Mekelweg 4, Delft" name="Address" required="">
+            <input type="text" placeholder="eg: Mekelweg 4, Delft" name="Address">
 
             <label for="Country">
                 <b>Country</b>
             </label>
-            <input type="text" placeholder="eg: Netherlands" name="Country" required="">
+            <input type="text" placeholder="eg: Netherlands" name="Country">
 
             <label for="ZipCode">
                 <b>Zip Code</b>
             </label>
-            <input type="text" placeholder="eg: 1234 AD" name="" required="">
+            <input type="text" placeholder="eg: 1234 AD" name="ZipCode">
 
 			<label for="Language">
                 <b>Language</b>
             </label>
-            <input type="text" placeholder="eg: English, Dutch..." name="" required="">
+            <input type="text" placeholder="eg: English, Dutch..." name="Language">
 
             <label for="Email">
                 <b>Email</b>
             </label>
-            <input type="email" placeholder="eg: example@gmail.com" name="" required="">
+            <input type="email" placeholder="eg: example@gmail.com" name="Email">
 
             <label for="Gender">
                 <b>Gender</b>
