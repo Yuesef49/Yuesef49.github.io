@@ -174,11 +174,16 @@
 				font-style: italic;
 				margin-left: 4px;
 			}
+			#tracker{
+				display: none;
+			}
         </style>
     </head>
     
     <body>
-
+		<div id="tracker">
+			<p>Tracker Test Hi</p>
+		</div>
         <nav class="navigator">
             <a href="home.html" >Home</a> |
             <a href="signIn.html">Sign In</a> |
@@ -247,7 +252,7 @@
             <label for="female">Female</label>
             <input type="radio" class="other" name="Gender" required="">
             <label for="other">Non-binary</label><br>
-			 <a href="yourList.html"><button class="button submitButton" id="signUpSubmitButton">Submit</button></p>	   
+			 <a><button class="button submitButton" onclick="document.getElementById('tracker').style.display='contents'" id="signUpSubmitButton">Submit</button></p>	   
     	</form>
     </body>
 </html>
