@@ -1,23 +1,19 @@
 function passwordRequirement()
 {
-    var elementPassword = document.getElementById("signUpPassword");
-    var elementUsername = document.getElementById("singUpUsername");
 
-    if(elementPassword == '' && elementUsername == '')
-    {
-        alert("Password cannot be empty!\nUsername cannot be empty")
-        return false; 
-    }
+    var elementPassword = document.getElementById("signUpPassword").value;
+    var elementUsername = document.getElementById("signUpUsername").value;
 
-        if(elementUsername.length < 5 || elementUsername.length > 12){
-            alert("Username length must be atleast 5 at most 12 characters");
+ 
+
+    if((elementUsername.length < 5) || (elementUsername.length > 12)){
+
+            alert("Username length must be at least 5 at most 12 characters");
             return false; 
-        }
-
-    if(elementPassword.length < 8){
-        alert("**Password length must be atleast 8 characters");
-        return false; 
     }
-    alert("function works")
+
+
+    alert("function works2");
     return true;
 }
+
