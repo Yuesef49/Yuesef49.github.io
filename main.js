@@ -1,9 +1,9 @@
 function passwordRequirement()
 {
-    var elementPassword = document.getElementById("signUpPassword").value;
-    var elementUsername = document.getElementById("singUpUsername").value;
+    var elementPassword = document.getElementById("signUpPassword");
+    var elementUsername = document.getElementById("singUpUsername");
 
-    if(elementPassword == "" && elementUsername == "")
+    if(elementPassword == '' && elementUsername == '')
     {
         alert("Password cannot be empty!\nUsername cannot be empty")
         return false; 
