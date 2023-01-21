@@ -5,26 +5,29 @@ function usernameChecker(username)
 
     if(username.length == 0)
     {
-        document.getElementById("usernameBarText").style.fontSize = "0px";
+        usernameText.innerHTML = "Please enter your username";
         return;
-    }
-    else{
-        document.getElementById("usernameBarText").style.fontSize = "16px";
     }
 
     var firstLetter = !username.charAt(0).match("[A-Z]");
     var counter = (username.length < 5) || (username.length > 12);
-
-    if(firstLetter || counter)
+    var lastLetter = !username.charAt(username.length-1).match("[0-9]");
+    
+    var lastLetter = !username.charAt(username.length-1).match("[$@$!%*#?&]") && lastLetter;
+    if(firstLetter || counter || lastLetter) 
     {
-        usernameText.innerHTML = "Your username should: ";
+        usernameText.innerHTML = "Username should: ";
         if(firstLetter)
     {
-        usernameText.innerHTML = usernameText.textContent + "start with Uppercase letter, ";
+        usernameText.innerHTML = usernameText.textContent + "start with an Uppercase, ";
     }
     if(counter){
 
-        usernameText.innerHTML = usernameText.textContent + "should include 5-12 characters";
+        usernameText.innerHTML = usernameText.textContent + "it's length should be 5-12, ";
+    }
+    if(lastLetter)
+    {
+        usernameText.innerHTML = usernameText.textContent + "end with number/special character";
     }
     }
     else{
