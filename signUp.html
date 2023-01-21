@@ -143,70 +143,57 @@
     </head>
     
     <body>
-        
+
         <nav class="navigator">
             <a href="home.html" >Home</a> |
             <a href="signIn.html">Sign In</a> |
             <a href="signUp.html" >Sign Up</a> |
             <a href="yourList.html">Your List</a>
         </nav>
-        
-        <form onsubmit="return passwordRequirement()">
-            
-        <div class="formFillPlace">
-                    <label for="Username">
-					<hr style="visibility:hidden;" />
-                    <b>Username</b>
-                    </label>
-					<br>
-                    <input id="signUpPassword" type="text" placeholder="username (userID)" name="username" required="">
-                <br>
-               <label for="Password">
-                    <b>Password</b>
-					<br>
-                    </label>
-                <input type="password" placeholder="password" name="password" required="">
-            
-           <br>
+
+        <form class="formFillPlace" onsubmit="return passwordRequirement()">
+            <label for="Username">
+				<hr style="visibility:hidden;" />  <!--Knk bu ne la?-->
+                <b>Username</b>
+            </label>
+                    <input id="signUpUsername" type="text" placeholder="username (userID)" name="username" required="">
+
+            <label for="Password">
+                <b>Password</b>
+            </label>
+            <input id="signUpPassword" type="password" placeholder="password" name="password" required="">
             <label for="Name">
                 <b>Name</b>
-				<br>
             </label>
             <input type="text" placeholder="your name and surname" name="name" required="">
-			<br>
+
             <label for="Address">
                 <b>Address</b>
-				<br>
             </label>
             <input type="text" placeholder="eg: Mekelweg 4, Delft" name="Address" required="">
-			<br>
+
             <label for="Country">
                 <b>Country</b>
-				<br>
             </label>
             <input type="text" placeholder="eg: Netherlands" name="Country" required="">
-			<br>
+
             <label for="ZipCode">
                 <b>Zip Code</b>
-				<br>
             </label>
             <input type="text" placeholder="eg: 1234 AD" name="" required="">
-			<br>
+
 			<label for="Language">
                 <b>Language</b>
-				<br>
             </label>
             <input type="text" placeholder="eg: English, Dutch..." name="" required="">
-			<br>
+
             <label for="Email">
                 <b>Email</b>
-				<br>
             </label>
             <input type="email" placeholder="eg: example@gmail.com" name="" required="">
-			<br>
+
             <label for="Gender">
                 <b>Gender</b>
-				<br>
             </label>
             <input type="radio" class="male" name="Gender" required="">
             <label for="male">Male</label>
@@ -214,11 +201,7 @@
             <label for="female">Female</label>
             <input type="radio" class="other" name="Gender" required="">
             <label for="other">Non-binary</label><br>
-			 <a href="yourList.html"><button class="button submitButton" id="signUpSubmitButton">Submit</button></p>
-        </div>    
-        </form>
-       
-        
-
+			 <a href="yourList.html"><button class="button submitButton" id="signUpSubmitButton">Submit</button></p>	   
+    	</form>
     </body>
 </html>
