@@ -36,25 +36,7 @@ function usernameChecker(username)
     
 }
 
-+function fullnameChecker(fullname)
-{
-    var nameText = document.getElementById("nameBarText");
-    if(fullname.length == 0)
-    {
-        nameText.innerHTML = "Please enter your name";
-        return;
-    }
 
-    var nameCheck = !fullname.match("[^A-Z^a-z^ ]");
-    if(nameCheck)
-    {
-        nameText.innerHTML = "Name meets the requirements!";
-    }
-    else if(!nameCheck)
-    {
-        nameText.innerHTML = "Name  must contain the alphabet only!";
-    }
-}
 
 function fullnameChecker(fullname)
 {
