@@ -71,7 +71,7 @@ function passwordChecker(password)
 
     if(password.length == 0)
     {
-        strengthbarText.innerHTML = "Please enter the password";
+        strengthbarText.innerHTML = "Please enter your password";
         return;
     }
 
