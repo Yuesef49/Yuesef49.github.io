@@ -1,20 +1,36 @@
-function passwordRequirement()
+function usernameChecker(username)
 {
 
-    var elementPassword = document.getElementById("signUpPassword").value;
-    var elementUsername = document.getElementById("signUpUsername").value;
+    var usernameText = document.getElementById("usernameBarText");
 
- 
-
-    if((elementUsername.length < 5) || (elementUsername.length > 12)){
-
-            alert("Username length must be at least 5 at most 12 characters");
-            return false; 
+    if(username.length == 0)
+    {
+        document.getElementById("usernameBarText").style.fontSize = "0px";
+        return;
+    }
+    else{
+        document.getElementById("usernameBarText").style.fontSize = "16px";
     }
 
+    var firstLetter = !username.charAt(0).match("[A-Z]");
+    var counter = (username.length < 5) || (username.length > 12);
 
-    alert("function works2");
-    return true;
+    if(firstLetter || counter)
+    {
+        usernameText.innerHTML = "Your username should: ";
+        if(firstLetter)
+    {
+        usernameText.innerHTML = usernameText.textContent + "start with Uppercase letter, ";
+    }
+    if(counter){
+
+        usernameText.innerHTML = usernameText.textContent + "should include 5-12 characters";
+    }
+    }
+    else{
+        usernameText.innerHTML = "Username meets the requirements";
+    }
+    
 }
 
 
@@ -98,6 +114,7 @@ function passwordChecker(password)
       {
         strengthbarText.innerHTML = strengthbarText.textContent + "At least 12 characters";
       }
+        return false;
       }
       
 }

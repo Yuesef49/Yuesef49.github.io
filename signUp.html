@@ -133,22 +133,41 @@
 
 			.submitButton:hover {
 			background-color: #f44336;
+
 			color: white;
 			border-radius: 7px;
 			}
 
 			#strengthbar{
-				background-color: #dcdcdc;
+				background-color: rgba(220, 220, 220, 0.7);
 				height: 20px;
-				border-radius: 0 0 5px 5px;
+				border-radius: 5px 5px 5px 5px;
   				margin-left: 3px;
 				width: 98.8%;
-				margin-top: 0;
+				margin-top: 4px;
 				margin-bottom: 22px;
 			}
 			#strengthbarText{
 				font-weight: bold;
 			   font-size: 16px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
+			#usernameBar{
+				background-color: rgba(220, 220, 220, 0.7);
+				height: 20px;
+				border-radius: 5px 5px 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 4px;
+				margin-bottom: 22px;
+			}
+			#usernameBarText{
+				font-weight: bold;
+			   font-size: 0px;
 				color: black;
 				margin-top: 0;
 				font-family: Georgia, 'Times New Roman', Times, serif;
@@ -172,7 +191,12 @@
 				<hr style="visibility:hidden;" />  <!--Knk bu ne la?-->
                 <b>Username</b>
             </label>
-                    <input id="signUpUsername" type="text" placeholder="username (userID)" name="username">
+                    <input id="signUpUsername" type="text" placeholder="username (userID)" name="username" style="margin-bottom: 0px; " oninput="usernameChecker(this.value)">
+					<div id="usernameBar">
+						<div>
+							<p id="usernameBarText">.</p>
+						</div>
+					</div>
 
             <label for="Password">
                 <b>Password</b>
