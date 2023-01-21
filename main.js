@@ -56,6 +56,26 @@ function usernameChecker(username)
     }
 }
 
+function fullnameChecker(fullname)
+{
+    var nameText = document.getElementById("nameBarText");
+    if(fullname.length == 0)
+    {
+        nameText.innerHTML = "Please enter your name";
+        return;
+    }
+
+    var nameCheck = !fullname.match("[^A-Z^a-z^ ]");
+    if(nameCheck)
+    {
+        nameText.innerHTML = "Name meets the requirements!";
+    }
+    else if(!nameCheck)
+    {
+        nameText.innerHTML = "Name  must contain the alphabet only!";
+    }
+}
+
 
 
 let strengthbar = document.getElementById("strengthbar");
@@ -114,6 +134,14 @@ function passwordChecker(password)
       if(flag == true)
       {
         strengthbarText.innerHTML = "Password passes the requirements!";
+        if(password.length >= 14)
+      {
+        strengthbarText.innerHTML = strengthbarText.textContent + ". Good password!";
+      }
+      else
+      {
+        strengthbarText.innerHTML = strengthbarText.textContent + ". Better password!";
+      }
       }
       else{
         strengthbarText.innerHTML = "Password should include: ";
