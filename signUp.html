@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<script src="main.js"></script>
+
     <head>
-        <link rel="stylesheet" href="StyleSheet.css">
+        
         <style>
             body {
              background-color: rgb(188, 229, 242);
@@ -149,7 +151,7 @@
             <a href="yourList.html">Your List</a>
         </nav>
         
-        <form>
+        <form onsubmit="return passwordRequirement()">
             
         <div class="formFillPlace">
                     <label for="Username">
@@ -157,17 +159,13 @@
                     <b>Username</b>
                     </label>
 					<br>
-                    <input type="text" placeholder="username (userID)" name="username" required="">
+                    <input id="signUpPassword" type="text" placeholder="username (userID)" name="username" required="">
                 <br>
                <label for="Password">
                     <b>Password</b>
 					<br>
                     </label>
                 <input type="password" placeholder="password" name="password" required="">
-            
-            
-             
-           
             
            <br>
             <label for="Name">
@@ -216,7 +214,7 @@
             <label for="female">Female</label>
             <input type="radio" class="other" name="Gender" required="">
             <label for="other">Non-binary</label><br>
-			 <a href="yourList.html"><button class="button submitButton">Submit</button></p>
+			 <a href="yourList.html"><button class="button submitButton" id="signUpSubmitButton">Submit</button></p>
         </div>    
         </form>
        
