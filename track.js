@@ -10,9 +10,9 @@ function tracker(){
     
     const elem = document.getElementById("body1");
     elem.addEventListener("click", countMouseClick);
-    elem.addEventListener("keydown", countKeyPress(keyPressAmount));
-    var test = "<p id='trackerInside3'></p>";
-    document.getElementById("tracker").insertAdjacentHTML('beforeend',test);
+    // elem.addEventListener("keydown", countKeyPress(keyPressAmount));
+    // var test = "<p id='trackerInside3'></p>";
+   // document.getElementById("tracker").insertAdjacentHTML("beforeend", test);
     incrSec();
     
 }
