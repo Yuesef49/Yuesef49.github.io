@@ -1,23 +1,44 @@
-function tracker(){
-    let a = 0;
-    let keyPressAmount = 0;
-
+/**
+ * Tracker:
+ * This function is called or "unloaded" to body
+ * of the signUp page. So the events start via
+ * this function
+ */
+function tracker(){ 
+    let a = 0;      //variable for mouse click counter
+    
+    /**
+     * Function countMouseClick
+     * this function counts the mouse clicks by incrementing
+     * the mouse click counter every time the mouse is clicked
+     * inside the body.
+     */
     function countMouseClick() {
         a = a + 1;
          document.getElementById("trackerInside").innerHTML =
          "Number of mouse clicks:" + a;
     }
     
-    const elem = document.getElementById("body1");
-    elem.addEventListener("click", countMouseClick);
-    // elem.addEventListener("keydown", countKeyPress(keyPressAmount));
-    // var test = "<p id='trackerInside3'></p>";
-   // document.getElementById("tracker").insertAdjacentHTML("beforeend", test);
-    incrSec();
-    
+    const elem = document.getElementById("body1");      //elem is the id of the body
+    elem.addEventListener("click", countMouseClick);    //event for clicking is added to body
+    elem.addEventListener("keydown", countKeyPress);    //event for key presses is added to body
+    incrSec();                                          //starts the time incremention
+    keyTypeInitialize();
 }
+let keyPressAmount = 0;
 let seconds = 0;
 let minutes = 0;
+    /**
+     * Function incrSec()
+    * incrSec is incrementing second
+    * every 1000 milisecond this function recurses itself
+    * and increments the second by 1 every time.
+    * also if second is higher than 60, it starts typing
+    * minute and second. When second is lower then 60
+    * it only types the seconds.
+    * every 60 seconds, minute is incremented by 1 and
+    * 60 is modulo'd so it becomes 0 again.
+    */
     function incrSec(){
         var timeSpentString = new String(); 
         seconds = seconds + 1;
@@ -34,8 +55,12 @@ let minutes = 0;
         setTimeout(incrSec, 1000);
     }
 
-    function countKeyPress(keyPressAmount){
-        keyPressAmount++;
-        var keyPressString = new String("Total key presses: " +keyPressAmount);
+    function countKeyPress(){
+        keyPressAmount = keyPressAmount + 1;
+        var keyPressString = new String("Total key presses: " + keyPressAmount);
         document.getElementById("trackerInside3").innerHTML = keyPressString;
+    }
+
+    function keyTypeInitialize(){
+        document.getElementById().addEventListener("keydown");
     }
