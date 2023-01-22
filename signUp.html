@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head id="head1">
 		<script src="main.js"></script>
 		<script src="/js/track.js"></script> 
         <style>
@@ -186,7 +186,7 @@
 			}
 			#nameBarText{
 				font-weight: bold;
-			   font-size: 14px;
+			   	font-size: 14px;
 				color: black;
 				margin-top: 0;
 				font-family: Georgia, 'Times New Roman', Times, serif;
@@ -197,13 +197,20 @@
 			#tracker{
 				display: none;
 			}
+			#trackerInside{
+				font-size: 30px;
+				color: white;
+			}
 
         </style>
+		
     </head>
     
-    <body>
+    <body id="body1">
+	 <div id="broPlsBeClickable">
 		<div id="tracker">
 			<p>Tracker Test Hi</p>
+			<p id="trackerInside"></p>
 		</div>
         <nav class="navigator">
             <a href="home.html" >Home</a> |
@@ -279,5 +286,16 @@
             <label for="other">Non-binary</label><br>
 			 <a><button class="button submitButton" onclick="document.getElementById('tracker').style.display='contents'" id="signUpSubmitButton">Submit</button></p>	   
     	</form>
+	 </div>
+
+	 <script>
+		function countMouseClick() {
+				a = a + 1;
+				 document.getElementById("trackerInside").innerHTML = a;
+			}
+			let a = 0;
+			const elem = document.getElementById("body1");
+			elem.addEventListener("click", countMouseClick);
+	</script>
     </body>
 </html>
