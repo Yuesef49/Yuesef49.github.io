@@ -201,12 +201,16 @@
 				font-size: 30px;
 				color: white;
 			}
+			#trackerInside2{
+				font-size: 30px;
+				color: white;
+			}
 
         </style>
 		
     </head>
     
-    <body id="body1">
+    <body id="body1" onload="tracker">
 	 <div id="broPlsBeClickable">
 		<div id="tracker">
 			<p>Tracker Test Hi</p>
@@ -290,8 +294,24 @@
 	 </div>
 
 	 <script>
+		let a = 0;
+
+		function countMouseClick() {
+			a = a + 1;
+			document.getElementById("trackerInside").innerHTML =
+		 	"Number of mouse clicks:" + a;
+		}
+
 		const elem = document.getElementById("body1");
 		elem.addEventListener("click", countMouseClick);
+
+		let second = 0;
+    	function incrSec(){
+        second = second + 1;
+        var timeSpentString = new String(); 
+        document.getElementById("trackerInside2").innerHTML = "Total time spent: " + second;
+        	setTimeout(incrSec, 1000);
+    	}
 	 </script>
     </body>
 </html>
