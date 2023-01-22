@@ -118,11 +118,11 @@ function passwordChecker(password)
         strengthbarText.innerHTML = "Password passes the requirements!";
         if(password.length >= 14)
       {
-        strengthbarText.innerHTML = strengthbarText.textContent + ". Good password!";
+        strengthbarText.innerHTML = strengthbarText.textContent + ". Better password!";
       }
       else
       {
-        strengthbarText.innerHTML = strengthbarText.textContent + ". Better password!";
+        strengthbarText.innerHTML = strengthbarText.textContent + ". Good password!";
       }
       }
       else{
