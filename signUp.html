@@ -194,6 +194,82 @@
 				margin-left: 4px;
 			}
 
+			#countryBar{
+				background-color: rgba(220, 220, 220, 0.7);
+				height: 20px;
+				border-radius: 5px 5px 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 4px;
+				margin-bottom: 22px;
+			}
+			#countryBarText{
+				font-weight: bold;
+			   	font-size: 14px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
+
+			#zipcodeBar{
+				background-color: rgba(220, 220, 220, 0.7);
+				height: 20px;
+				border-radius: 5px 5px 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 4px;
+				margin-bottom: 22px;
+			}
+			#zipcodeBarText{
+				font-weight: bold;
+			   	font-size: 14px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
+			
+			#emailBar{
+				background-color: rgba(220, 220, 220, 0.7);
+				height: 20px;
+				border-radius: 5px 5px 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 4px;
+				margin-bottom: 22px;
+			}
+			#emailBarText{
+				font-weight: bold;
+			   	font-size: 14px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
+
+			#languageBar{
+				background-color: rgba(220, 220, 220, 0.7);
+				height: 20px;
+				border-radius: 5px 5px 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 4px;
+				margin-bottom: 22px;
+			}
+			#languageBarText{
+				font-weight: bold;
+			   	font-size: 14px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
+
 			#tracker{
 				display: none;
 			}
@@ -224,7 +300,7 @@
             <a href="yourList.html">Your List</a>
         </nav>
 
-        <form class="formFillPlace" onsubmit="return passwordRequirement()">
+        <form class="formFillPlace" onsubmit="return submitChecker()">
             <label for="Username">
 				<hr style="visibility:hidden;" />  <!--Knk bu ne la?-->
                 <b>Username</b>
@@ -263,22 +339,42 @@
             <label for="Country">
                 <b>Country</b>
             </label>
-            <input type="text" placeholder="eg: Netherlands" name="Country">
+            <input id="signUpCountry" type="text" placeholder="eg: Netherlands" name="Country" style="margin-bottom: 0;" oninput="countryChecker(this.value)">
+			<div id="countryBar">
+				<div>
+					<p id="countryBarText">Please enter your country</p>
+				</div>
+			</div>
 
             <label for="ZipCode">
                 <b>Zip Code</b>
             </label>
-            <input type="text" placeholder="eg: 1234 AD" name="ZipCode">
+            <input id="signUpZipcode" type="text" placeholder="eg: 1234AD" name="ZipCode" style="margin-bottom: 0;" oninput="zipcodeChecker(this.value)">
+			<div id="zipcodeBar">
+				<div>
+					<p id="zipcodeBarText">Please enter your zipCode</p>
+				</div>
+			</div>
 
 			<label for="Language">
                 <b>Language</b>
             </label>
-            <input type="text" placeholder="eg: English, Dutch..." name="Language">
+            <input id="signUpLanguage" type="text" placeholder="eg: English, Dutch..." name="Language" style="margin-bottom: 0;" oninput="languageCheck(this.value)">
+			<div id="languageBar">
+				<div>
+					<p id="languageBarText">Please enter your language</p>
+				</div>
+			</div>
 
             <label for="Email">
                 <b>Email</b>
             </label>
-            <input type="email" placeholder="eg: example@gmail.com" name="Email">
+            <input id="signUpEmail" type="email" placeholder="eg: example@gmail.com" name="Email" style="margin-bottom: 0;" oninput="emailChecker(this.value)">
+			<div id="emailBar">
+				<div>
+					<p id="emailBarText">Please enter your email</p>
+				</div>
+			</div>
 
             <label for="Gender">
                 <b>Gender</b>

@@ -1,12 +1,35 @@
+function submitChecker()
+{
+
+  if(usernameChecker(document.getElementById("signUpUsername").value) 
+  && fullnameChecker(document.getElementById("signUpName").value) 
+  && passwordChecker(document.getElementById("signUpPassword").value) 
+  && countryChecker(document.getElementById("signUpCountry").value) 
+  && zipcodeChecker(document.getElementById("signUpZipcode").value) 
+  && emailChecker(document.getElementById("signUpEmail").value) 
+  && languageCheck(document.getElementById("signUpLanguage").value))
+  {
+    alert("true");
+    
+    return true;
+  }
+  else{
+    alert("You didn't fill the required fields properly!!");
+    return false;
+  }
+}
+
 function usernameChecker(username)
 {
+  var usernameBar = document.getElementById("usernameBar");
 
     var usernameText = document.getElementById("usernameBarText");
 
     if(username.length == 0)
     {
-        usernameText.innerHTML = "Please enter your username";
-        return;
+        usernameBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+        usernameText.innerHTML = "Username cannot be empty";
+        return false;
     }
 
     var firstLetter = !username.charAt(0).match("[A-Z]");
@@ -16,8 +39,9 @@ function usernameChecker(username)
     var lastLetter = !username.charAt(username.length-1).match("[$@$!%*#?&]") && lastLetter;
     if(firstLetter || counter || lastLetter) 
     {
-        usernameText.innerHTML = "Username should: ";
-        if(firstLetter)
+      usernameBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+      usernameText.innerHTML = "Username should: ";
+    if(firstLetter)
     {
         usernameText.innerHTML = usernameText.textContent + "start with an Uppercase, ";
     }
@@ -31,8 +55,11 @@ function usernameChecker(username)
     }
     }
     else{
+        usernameBar.style.backgroundColor= "rgb(170, 255, 128)";
         usernameText.innerHTML = "Username meets the requirements";
+        return true;
     }
+    return false;
     
 }
 
@@ -41,26 +68,32 @@ function usernameChecker(username)
 function fullnameChecker(fullname)
 {
     var nameText = document.getElementById("nameBarText");
+    var nameBar = document.getElementById("nameBar");
     if(fullname.length == 0)
     {
-        nameText.innerHTML = "Please enter your name";
-        return;
+        nameBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+        nameText.innerHTML = "Name cannot be empty!";
+        return false;
     }
 
     var nameCheck = !fullname.match("[^A-Z^a-z^ ]");
     if(nameCheck)
     {
+        nameBar.style.backgroundColor= "rgb(170, 255, 128)";
         nameText.innerHTML = "Name meets the requirements!";
+        return true;
     }
     else if(!nameCheck)
     {
+        nameBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
         nameText.innerHTML = "Name  must contain the alphabet only!";
+        return false;
     }
 }
 
 
 
-let strengthbar = document.getElementById("strengthbar");
+
 
 function passwordChecker(password)
 {
@@ -68,11 +101,12 @@ function passwordChecker(password)
     var characters =true;
     
     var strengthbarText = document.getElementById("strengthbarText");
-
+    var passwordBar = document.getElementById("strengthbar");
     if(password.length == 0)
     {
-        strengthbarText.innerHTML = "Please enter your password";
-        return;
+        passwordBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+        strengthbarText.innerHTML = "Password cannot be empty";
+        return false;
     }
 
     var regArray = new Array();
@@ -115,17 +149,24 @@ function passwordChecker(password)
       }
       if(flag == true)
       {
+        
+        
         strengthbarText.innerHTML = "Password passes the requirements!";
         if(password.length >= 14)
       {
+        passwordBar.style.backgroundColor= "rgb(170, 255, 128)";
         strengthbarText.innerHTML = strengthbarText.textContent + ". Better password!";
+        return true;
       }
       else
       {
+        passwordBar.style.backgroundColor= "rgb(0, 179, 0)";
         strengthbarText.innerHTML = strengthbarText.textContent + ". Good password!";
+        return true;
       }
       }
       else{
+        passwordBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
         strengthbarText.innerHTML = "Password should include: ";
         if(checker[0] == 0)
       {
@@ -149,4 +190,118 @@ function passwordChecker(password)
         return false;
       }
       
+}
+
+function countryChecker(country)
+{
+  var countryBarText = document.getElementById("countryBarText");
+  var countryBar = document.getElementById("countryBar");
+  if(country.length == 0)
+  {
+    countryBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    countryBarText.innerHTML = "Country cannot be empty";
+    return false;
+    
+  }
+  else{
+    countryBar.style.backgroundColor= "rgb(170, 255, 128)";
+    countryBarText.innerHTML = "Correct input!";
+    return true;
+  }
+
+}
+
+function zipcodeChecker(zipcode)
+{
+  var zipcheck = !zipcode.slice(0,3).match("[^A-Z^a-z^ ]");
+  var zipcheck2 = !zipcode.slice(4,5).match("[^0-9]");
+  var zipcodeText = document.getElementById("zipcodeBarText");
+  var counterCheck = zipcode.length == 6 ? true : false;
+  var zipcodeBar = document.getElementById("zipcodeBar");
+
+  if(zipcode.length == 0)
+  {
+    zipcodeBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    zipcodeText.innerHTML = "Zipcode cannot be empty!";
+    return false;
+  }
+  
+  if(!zipcheck && !zipcheck2 && counterCheck)
+  {
+    zipcodeBar.style.backgroundColor= "rgb(170, 255, 128)";
+    zipcodeText.innerHTML = "Correct/Valid form of input!";
+    return true;
+  }
+  else{
+    zipcodeBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    zipcodeText.innerHTML = "InCorrect/InValid form of input! Correct Form: 1234AD";
+    return false;
+  }
+}
+
+function emailChecker(email)
+{
+  var emailText = document.getElementById("emailBarText");
+  var emailBar = document.getElementById("emailBar");
+  if(email.length == 0)
+  {
+    emailBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    emailText.innerHTML = "Email cannot be empty!";
+    return false;
+  }
+  else if(email.indexOf("@") == -1)
+  {
+    emailBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    emailText.innerHTML = "Email input is not in a proper format!";
+    return false;
+  }
+  else if(email.indexOf("@") == 0)
+  {
+    emailBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    emailText.innerHTML = "Email input is not in a proper format!";
+    return false;
+  }
+  else if(email.indexOf("@") != email.lastIndexOf("@"))
+  {
+    emailBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    emailText.innerHTML = "Email input is not in a proper format!";
+    return false;
+  }
+  else if(email.match(" ") != null)
+  {
+    emailBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    emailText.innerHTML = "Email input is not in a proper format!";
+    return false;
+  }
+  else if(email.match(".com") == null)
+  {
+    emailBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    emailText.innerHTML = "Email input is not in a proper format!";
+    return false;
+  }
+  else{
+    emailBar.style.backgroundColor= "rgb(170, 255, 128)";
+    emailText.innerHTML = "Correct/Valid form of input!";
+    return true;
+  }
+
+}
+
+function languageCheck(language)
+{
+  var languageText = document.getElementById("languageBarText");
+  var languageBar = document.getElementById("languageBar");
+
+  if(language.length == 0)
+  {
+    languageBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    languageText.innerHTML = "Language cannot be empty!";
+    return false;
+  }
+  else{
+    languageBar.style.backgroundColor= "rgb(170, 255, 128)";
+    languageText.innerHTML = "Correct form of input!";
+    return true;
+  }
+
 }
