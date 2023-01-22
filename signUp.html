@@ -2,7 +2,7 @@
 <html>
     <head id="head1">
 		<script src="main.js"></script>
-		<script src="/js/track.js"></script> 
+		<script src="track.js"></script> 
         <style>
             body {
              background-color: rgb(188, 229, 242);
@@ -211,6 +211,7 @@
 		<div id="tracker">
 			<p>Tracker Test Hi</p>
 			<p id="trackerInside"></p>
+			<p id="trackerInside2"></p>
 		</div>
         <nav class="navigator">
             <a href="home.html" >Home</a> |
@@ -284,18 +285,13 @@
             <label for="female">Female</label>
             <input type="radio" class="other" name="Gender" required="">
             <label for="other">Non-binary</label><br>
-			 <a><button class="button submitButton" onclick="document.getElementById('tracker').style.display='contents'" id="signUpSubmitButton">Submit</button></p>	   
+			<button class="button submitButton" onclick="document.getElementById('tracker').style.display='contents'" id="signUpSubmitButton">Submit</button>	   
     	</form>
 	 </div>
 
 	 <script>
-		function countMouseClick() {
-				a = a + 1;
-				 document.getElementById("trackerInside").innerHTML = a;
-			}
-			let a = 0;
-			const elem = document.getElementById("body1");
-			elem.addEventListener("click", countMouseClick);
-	</script>
+		const elem = document.getElementById("body1");
+		elem.addEventListener("click", countMouseClick);
+	 </script>
     </body>
 </html>
