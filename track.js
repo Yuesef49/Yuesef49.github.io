@@ -22,12 +22,17 @@ function tracker(){
     const elem = document.getElementById("body1");      //elem is the id of the body
     elem.addEventListener("click", countMouseClick);    //event for clicking is added to body
     elem.addEventListener("keydown", countKeyPress);    //event for key presses is added to body
+    const elem2 = document.getElementById("formID");
+    elem2.addEventListener("keydown", inputFieldCounter);
     incrSec();                                          //starts the time incremention
     keyTypeInitialize();
+   
+
 }
 let keyPressAmount = 0;
 let seconds = 0;
 let minutes = 0;
+let totalInputCharacter = 0;
     /**
      * Function incrSec()
     * incrSec is incrementing second
@@ -65,6 +70,16 @@ let minutes = 0;
         document.getElementById().addEventListener("keydown");
     }
     
+
+    
+    function inputFieldCounter()
+    {
+        totalInputCharacter = totalInputCharacter + 1;
+        var charCountString = new String("Total char presses: " + totalInputCharacter);
+        document.getElementById("trackerInside4").innerHTML = charCountString;
+        
+
+    }
 
     function trackerCaller()
     {

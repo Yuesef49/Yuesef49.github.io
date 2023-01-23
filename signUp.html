@@ -340,7 +340,7 @@
 			#tracker{
 				display: none;
 			}
-			#trackerInside, #trackerInside2, #trackerInside3{
+			#trackerInside, #trackerInside2, #trackerInside3, #trackerInside4{
 				font-size: 30px;
 				color: white;
 			}
@@ -357,6 +357,7 @@
 			<p id="trackerInside"></p>
 			<p id="trackerInside2"></p>
 			<p id="trackerInside3"></p>
+			<p id="trackerInside4"></p>
 		</div>
         <nav class="navigator">
             <a href="home.html" >Home</a> |
@@ -366,7 +367,7 @@
         </nav>
 
 		<!-- return !( submitChecker() && trackerCaller() ) because otherwise it's refresing the page. We are losingthe content-->
-        <form class="formFillPlace" onsubmit="return !( submitChecker() && trackerCaller() )">  
+        <form id="formID" class="formFillPlace" onsubmit="return !( submitChecker() && trackerCaller() )">  
             <label for="Username">
 				<hr style="visibility:hidden;" />  <!--Knk bu ne la?-->
                 <b>Username</b>
