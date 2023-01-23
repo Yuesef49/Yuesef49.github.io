@@ -1,9 +1,17 @@
 function submitChecker()
 {
 
+  usernameChecker(document.getElementById("signUpUsername").value) 
+  passwordChecker(document.getElementById("signUpPassword").value) 
+  fullnameChecker(document.getElementById("signUpName").value)
+  countryChecker(document.getElementById("signUpCountry").value) 
+  zipcodeChecker(document.getElementById("signUpZipcode").value) 
+  emailChecker(document.getElementById("signUpEmail").value) 
+  languageCheck(document.getElementById("signUpLanguage").value)
+
   if(usernameChecker(document.getElementById("signUpUsername").value) 
-  && fullnameChecker(document.getElementById("signUpName").value) 
-  && passwordChecker(document.getElementById("signUpPassword").value) 
+  &&  passwordChecker(document.getElementById("signUpPassword").value) 
+  && fullnameChecker(document.getElementById("signUpName").value)
   && countryChecker(document.getElementById("signUpCountry").value) 
   && zipcodeChecker(document.getElementById("signUpZipcode").value) 
   && emailChecker(document.getElementById("signUpEmail").value) 
@@ -111,7 +119,7 @@ function passwordChecker(password)
 
     var regArray = new Array();
     var flag = false;
-      regArray.push("[A-Z]"); //Uppercase Alphabet.
+      regArray.push("[A-Z]"); //Uppercase Alphabet. 
       regArray.push("[a-z]"); //Lowercase Alphabet.
       regArray.push("[0-9]"); //Digit.
       regArray.push("[$@$!%*#?&]"); //Special Character.
