@@ -64,3 +64,10 @@ let minutes = 0;
     function keyTypeInitialize(){
         document.getElementById().addEventListener("keydown");
     }
+    
+
+    function trackerCaller()
+    {
+        document.getElementById('tracker').style.display='contents';
+        return true;
+    }

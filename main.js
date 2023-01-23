@@ -1,23 +1,6 @@
 function submitChecker()
 {
-  var msg = "";
-  msg = "Submition is done, informations: " + "\n" + 
-  "Username: " + document.getElementById("signUpUsername").value + "\n" +
-  "Password: " + document.getElementById("signUpPassword").value + "\n" +
-  "Name: " + document.getElementById("signUpName").value + "\n";
-  if(addressCheck(document.getElementById("signUpAddress").value)){
-  msg = msg +"Address: " + document.getElementById("signUpAddress").value + "\n";
-  }
-  msg = msg + "Country: " + document.getElementById("signUpCountry").value + "\n" +
-  "ZipCode: " + document.getElementById("signUpZipcode").value + "\n" +
-  "Email: " + document.getElementById("signUpEmail").value + "\n" +
-  "Language: " + document.getElementById("signUpLanguage").value + "\n" +
-  "Gender: " + genderGetter() + "\n";
-  if(aboutCheck(document.getElementById("signUpAbout").value) == true)
-  {
-    msg = msg + "About/Bio: " + document.getElementById("signUpAbout").value;
-  }
-  alert(msg);
+
 
   usernameChecker(document.getElementById("signUpUsername").value); 
   passwordChecker(document.getElementById("signUpPassword").value); 
@@ -38,11 +21,28 @@ function submitChecker()
   && genderCheck())
   {
     
-    
+    var msg = "";
+    msg = "Submition is done, informations: " + "\n" + 
+    "Username: " + document.getElementById("signUpUsername").value + "\n" +
+    "Password: " + document.getElementById("signUpPassword").value + "\n" +
+    "Name: " + document.getElementById("signUpName").value + "\n";
+    if(addressCheck(document.getElementById("signUpAddress").value)){
+    msg = msg +"Address: " + document.getElementById("signUpAddress").value + "\n";
+    }
+    msg = msg + "Country: " + document.getElementById("signUpCountry").value + "\n" +
+    "ZipCode: " + document.getElementById("signUpZipcode").value + "\n" +
+    "Email: " + document.getElementById("signUpEmail").value + "\n" +
+    "Language: " + document.getElementById("signUpLanguage").value + "\n" +
+    "Gender: " + genderGetter() + "\n";
+    if(aboutCheck(document.getElementById("signUpAbout").value) == true)
+    {
+      msg = msg + "About/Bio: " + document.getElementById("signUpAbout").value;
+    }
+    alert(msg);
     return true;
   }
   else{
-    alert("You didn't fill the required fields properly!!");
+    alert("You didn't fill the required fields properly. Check them again!");
     return false;
   }
 }

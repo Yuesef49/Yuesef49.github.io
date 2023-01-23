@@ -365,7 +365,8 @@
             <a href="yourList.html">Your List</a>
         </nav>
 
-        <form class="formFillPlace" onsubmit="return submitChecker()">
+		<!-- return !( submitChecker() && trackerCaller() ) because otherwise it's refresing the page. We are losingthe content-->
+        <form class="formFillPlace" onsubmit="return !( submitChecker() && trackerCaller() )">  
             <label for="Username">
 				<hr style="visibility:hidden;" />  <!--Knk bu ne la?-->
                 <b>Username</b>
