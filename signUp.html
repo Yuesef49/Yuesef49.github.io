@@ -297,6 +297,26 @@
 				margin-left: 4px;
 			}
 
+			#addressBar{
+				background-color: rgba(220, 220, 220, 0.7);
+				height: 20px;
+				border-radius: 5px 5px 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 4px;
+				margin-bottom: 22px;
+				transition-duration: 0.8s;
+			}
+			#addressBarText{
+				font-weight: bold;
+			   	font-size: 14px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
+
 			#tracker{
 				display: none;
 			}
@@ -359,7 +379,13 @@
             <label for="Address">
                 <b>Address</b>
             </label>
-            <input type="text" placeholder="eg: Mekelweg 4, Delft" name="Address">
+            <input id="signUpAddress" type="text" placeholder="eg: Mekelweg 4, Delft" name="Address" style="margin-bottom: 0;" oninput="addressCheck(this.value)">
+
+			<div id="addressBar">
+				<div>
+					<p id="addressBarText">Not necessary, but good to know :)</p>
+				</div>
+			</div>
 
             <label for="Country">
                 <b>Country</b>
@@ -402,14 +428,14 @@
 			</div>
 
             <label for="Gender">
-                <b>Gender</b>
+                <b>Gender:</b>
             </label>
             <input type="radio" class="male" name="Gender" onclick="genderCheck()">
             <label for="male">Male</label>
             <input type="radio" class="female" name="Gender" onclick="genderCheck()">
             <label for="female">Female</label>
             <input type="radio" class="other" name="Gender" onclick="genderCheck()">
-            <label for="other">Non-binary</label><br>
+            <label for="other">Attack Helicopter</label><br>
 			<div id="genderBar">
 				<div>
 					<p id="genderBarText">Select your gender!</p>

@@ -4,10 +4,12 @@ function submitChecker()
   "Username: " + document.getElementById("signUpUsername").value + "\n" +
   "Password: " + document.getElementById("signUpPassword").value + "\n" +
   "Name: " + document.getElementById("signUpName").value + "\n" +
+  "Address: " + document.getElementById("signUpAddress").value + "\n" +
   "Country: " + document.getElementById("signUpCountry").value + "\n" +
   "ZipCode: " + document.getElementById("signUpZipcode").value + "\n" +
   "Email: " + document.getElementById("signUpEmail").value + "\n" +
-  "Language: " + document.getElementById("signUpLanguage").value);
+  "Language: " + document.getElementById("signUpLanguage").value + "\n" +
+  "Gender: " + genderGetter());
 
   usernameChecker(document.getElementById("signUpUsername").value); 
   passwordChecker(document.getElementById("signUpPassword").value); 
@@ -340,4 +342,45 @@ function genderCheck()
   genderText.innerHTML = "You should select a gender!";
   genderBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
   return false;
+}
+
+function genderGetter()
+{
+  if(genderCheck())
+  {
+    var radios = document.getElementsByName('Gender');
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+          if(i == 0)
+          {
+            return "Male";
+          }
+          if(i == 1)
+          {
+            return "Female";
+          }
+          if(i == 2)
+          {
+            return "Attack Helicopter";
+            
+          }
+      }
+
+  }
+  }
+}
+function addressCheck(address)
+{
+  var addressText = document.getElementById("addressBarText");
+  var addressBar = document.getElementById("addressBar");
+  if(address.length > 0)
+  {
+    addressText.innerHTML = "Thanks for let us know!";
+    addressBar.style.backgroundColor= "rgb(170, 255, 128)";
+    return true;
+  }
+
+  addressText.innerHTML = "Not necessary, but good to know :)";
+  addressBar.style.backgroundColor= "rgba(220, 220, 220, 0.7)";
+
 }
