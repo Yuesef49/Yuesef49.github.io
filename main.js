@@ -131,10 +131,10 @@ function passwordChecker(password)
 
     var regArray = new Array();
     var flag = false;
-      regArray.push("[A-Z]"); //Uppercase Alphabet. 
-      regArray.push("[a-z]"); //Lowercase Alphabet.
-      regArray.push("[0-9]"); //Digit.
-      regArray.push("[$@$!%*#?&]"); //Special Character.
+      regArray.push("[A-Z]"); 
+      regArray.push("[a-z]"); 
+      regArray.push("[0-9]"); 
+      regArray.push("[$@$!%*#?&]"); 
 
       var checker = new Array();
       checker.push(0);
