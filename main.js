@@ -1,13 +1,13 @@
 function submitChecker()
 {
-
-  usernameChecker(document.getElementById("signUpUsername").value) 
-  passwordChecker(document.getElementById("signUpPassword").value) 
-  fullnameChecker(document.getElementById("signUpName").value)
-  countryChecker(document.getElementById("signUpCountry").value) 
-  zipcodeChecker(document.getElementById("signUpZipcode").value) 
-  emailChecker(document.getElementById("signUpEmail").value) 
-  languageCheck(document.getElementById("signUpLanguage").value)
+  genderCheck();
+  usernameChecker(document.getElementById("signUpUsername").value); 
+  passwordChecker(document.getElementById("signUpPassword").value); 
+  fullnameChecker(document.getElementById("signUpName").value);
+  countryChecker(document.getElementById("signUpCountry").value); 
+  zipcodeChecker(document.getElementById("signUpZipcode").value); 
+  emailChecker(document.getElementById("signUpEmail").value); 
+  languageCheck(document.getElementById("signUpLanguage").value);
 
   if(usernameChecker(document.getElementById("signUpUsername").value) 
   &&  passwordChecker(document.getElementById("signUpPassword").value) 
@@ -312,4 +312,18 @@ function languageCheck(language)
     return true;
   }
 
+}
+
+function genderCheck()
+{
+  var radios = document.getElementsByName('Gender');
+
+  for (var i = 0; i < radios.length; i++) {
+      if (radios[i].type === 'radio' && radios[i].checked) {
+
+          return;    
+      }
+
+  }
+  alert("zort");
 }
