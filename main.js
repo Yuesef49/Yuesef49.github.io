@@ -1,6 +1,14 @@
 function submitChecker()
 {
-  genderCheck();
+  alert("Submition is done, informations: " + "\n" +
+  "Username: " + document.getElementById("signUpUsername").value + "\n" +
+  "Password: " + document.getElementById("signUpPassword").value + "\n" +
+  "Name: " + document.getElementById("signUpName").value + "\n" +
+  "Country: " + document.getElementById("signUpCountry").value + "\n" +
+  "ZipCode: " + document.getElementById("signUpZipcode").value + "\n" +
+  "Email: " + document.getElementById("signUpEmail").value + "\n" +
+  "Language: " + document.getElementById("signUpLanguage").value);
+
   usernameChecker(document.getElementById("signUpUsername").value); 
   passwordChecker(document.getElementById("signUpPassword").value); 
   fullnameChecker(document.getElementById("signUpName").value);
@@ -8,6 +16,7 @@ function submitChecker()
   zipcodeChecker(document.getElementById("signUpZipcode").value); 
   emailChecker(document.getElementById("signUpEmail").value); 
   languageCheck(document.getElementById("signUpLanguage").value);
+  genderCheck();
 
   if(usernameChecker(document.getElementById("signUpUsername").value) 
   &&  passwordChecker(document.getElementById("signUpPassword").value) 
@@ -15,9 +24,10 @@ function submitChecker()
   && countryChecker(document.getElementById("signUpCountry").value) 
   && zipcodeChecker(document.getElementById("signUpZipcode").value) 
   && emailChecker(document.getElementById("signUpEmail").value) 
-  && languageCheck(document.getElementById("signUpLanguage").value))
+  && languageCheck(document.getElementById("signUpLanguage").value)
+  && genderCheck())
   {
-    alert("true");
+    
     
     return true;
   }
@@ -317,14 +327,17 @@ function languageCheck(language)
 function genderCheck()
 {
   var radios = document.getElementsByName('Gender');
-  var languageText = document.getElementById("genderBarText");
-  var languageBar = document.getElementById("genderBar");
+  var genderText = document.getElementById("genderBarText");
+  var genderBar = document.getElementById("genderBar");
   for (var i = 0; i < radios.length; i++) {
       if (radios[i].checked) {
-
-          return;    
+          genderText.innerHTML = "Thanks for selection!";
+          genderBar.style.backgroundColor= "rgb(170, 255, 128)";
+          return true;    
       }
 
   }
-  alert("zort");
+  genderText.innerHTML = "You should select a gender!";
+  genderBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+  return false;
 }
