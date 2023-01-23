@@ -277,6 +277,26 @@
 				margin-left: 4px;
 			}
 
+			#genderBar{
+				background-color: rgba(220, 220, 220, 0.7);
+				height: 20px;
+				border-radius: 5px 5px 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 4px;
+				margin-bottom: 22px;
+				transition-duration: 0.8s;
+			}
+			#genderBarText{
+				font-weight: bold;
+			   	font-size: 14px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
+
 			#tracker{
 				display: none;
 			}
@@ -390,6 +410,11 @@
             <label for="female">Female</label>
             <input type="radio" class="other" name="Gender">
             <label for="other">Non-binary</label><br>
+			<div id="genderBar">
+				<div>
+					<p id="genderBarText">Select your gender!</p>
+				</div>
+			</div>
 			<button class="button submitButton" onclick="document.getElementById('tracker').style.display='contents'" id="signUpSubmitButton">Submit</button>	   
     	</form>
 	 </div>

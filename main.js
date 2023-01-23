@@ -317,9 +317,10 @@ function languageCheck(language)
 function genderCheck()
 {
   var radios = document.getElementsByName('Gender');
-
+  var languageText = document.getElementById("genderBarText");
+  var languageBar = document.getElementById("genderBar");
   for (var i = 0; i < radios.length; i++) {
-      if (radios[i].type === 'radio' && radios[i].checked) {
+      if (radios[i].checked) {
 
           return;    
       }
