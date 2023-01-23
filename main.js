@@ -1,15 +1,23 @@
 function submitChecker()
 {
-  alert("Submition is done, informations: " + "\n" +
+  var msg = "";
+  msg = "Submition is done, informations: " + "\n" + 
   "Username: " + document.getElementById("signUpUsername").value + "\n" +
   "Password: " + document.getElementById("signUpPassword").value + "\n" +
-  "Name: " + document.getElementById("signUpName").value + "\n" +
-  "Address: " + document.getElementById("signUpAddress").value + "\n" +
-  "Country: " + document.getElementById("signUpCountry").value + "\n" +
+  "Name: " + document.getElementById("signUpName").value + "\n";
+  if(addressCheck(document.getElementById("signUpAddress").value)){
+  msg = msg +"Address: " + document.getElementById("signUpAddress").value + "\n";
+  }
+  msg = msg + "Country: " + document.getElementById("signUpCountry").value + "\n" +
   "ZipCode: " + document.getElementById("signUpZipcode").value + "\n" +
   "Email: " + document.getElementById("signUpEmail").value + "\n" +
   "Language: " + document.getElementById("signUpLanguage").value + "\n" +
-  "Gender: " + genderGetter());
+  "Gender: " + genderGetter() + "\n";
+  if(aboutCheck(document.getElementById("signUpAbout").value) == true)
+  {
+    msg = msg + "About/Bio: " + document.getElementById("signUpAbout").value;
+  }
+  alert(msg);
 
   usernameChecker(document.getElementById("signUpUsername").value); 
   passwordChecker(document.getElementById("signUpPassword").value); 
@@ -181,7 +189,7 @@ function passwordChecker(password)
       else
       {
         passwordBar.style.backgroundColor= "rgb(0, 179, 0)";
-        strengthbarText.innerHTML = strengthbarText.textContent + ". Good password!";
+        strengthbarText.innerHTML = strengthbarText.textContent + ". Good password! But can be better with little more length.";
         return true;
       }
       }
@@ -382,5 +390,29 @@ function addressCheck(address)
 
   addressText.innerHTML = "Not necessary, but good to know :)";
   addressBar.style.backgroundColor= "rgba(220, 220, 220, 0.7)";
+  return false;
 
+}
+
+function aboutCheck(about)
+{
+  var aboutText = document.getElementById("aboutBarText");
+  var aboutBar = document.getElementById("aboutBar");
+  if(about.length > 0 && about.length < 50)
+  {
+    aboutText.innerHTML = "Thanks for let us know!";
+    aboutBar.style.backgroundColor= "rgb(170, 255, 128)";
+    return true;
+  }
+  else if(about.length > 50)
+  {
+    aboutText.innerHTML = "Can it be little shorter please ( To not to destroy alert box :) )!";
+    aboutBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
+    return false;
+  }
+
+  aboutText.innerHTML = "Not necessary, but good to know :)";
+  aboutBar.style.backgroundColor= "rgba(220, 220, 220, 0.7)";
+
+  return false;
 }

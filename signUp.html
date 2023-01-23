@@ -317,6 +317,26 @@
 				margin-left: 4px;
 			}
 
+			#aboutBar{
+				background-color: rgba(220, 220, 220, 0.7);
+				height: 20px;
+				border-radius: 5px 5px 5px 5px;
+  				margin-left: 3px;
+				width: 98.8%;
+				margin-top: 4px;
+				margin-bottom: 22px;
+				transition-duration: 0.8s;
+			}
+			#aboutBarText{
+				font-weight: bold;
+			   	font-size: 14px;
+				color: black;
+				margin-top: 0;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				font-style: italic;
+				margin-left: 4px;
+			}
+
 			#tracker{
 				display: none;
 			}
@@ -424,6 +444,16 @@
 			<div id="emailBar">
 				<div>
 					<p id="emailBarText">Please enter your email</p>
+				</div>
+			</div>
+
+			<label for="About">
+                <b>About/Bio</b>
+            </label>
+            <input id="signUpAbout" type="text" placeholder="Info about yourself..." name="About" style="margin-bottom: 0;" oninput="aboutCheck(this.value)">
+			<div id="aboutBar">
+				<div>
+					<p id="aboutBarText">Not necessary, but good to know :)</p>
 				</div>
 			</div>
 
