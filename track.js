@@ -4,6 +4,13 @@
  * of the signUp page. So the events start via
  * this function
  */
+
+let seconds = 0;
+let minutes = 0;
+let keyPressAmount = -1;
+let totalInputCharacter = -1;  
+// Knk bunlari -1 yaptim cunku dumduz submite tiklayinca hic key basmadan 1 olarak ekrana cikiyor. cunku fonksiyonlar hep +1 e odakli
+
 function tracker(){ 
     let a = 0;      //variable for mouse click counter
     
@@ -15,10 +22,14 @@ function tracker(){
      */
     function countMouseClick() {
         a = a + 1;
-         document.getElementById("trackerInside").innerHTML =
+        document.getElementById("trackerInside").innerHTML =
          "Number of mouse clicks:" + a;
     }
     
+    countKeyPress();
+    inputFieldCounter(); //!!!!Knk bunlar olmadan dumduz hicbir sey yazmadan ve klavyeye tiklamadan basinca bosluk oluyor onun icin bir kere calistridim ki innerhtml atamalari olsun
+    //o yuzden keypressler -1 ile basliyor!!!!!!!
+ 
     const elem = document.getElementById("body1");      //elem is the id of the body
     elem.addEventListener("click", countMouseClick);    //event for clicking is added to body
     elem.addEventListener("keydown", countKeyPress);    //event for key presses is added to body
@@ -29,10 +40,7 @@ function tracker(){
    
 
 }
-let keyPressAmount = 0;
-let seconds = 0;
-let minutes = 0;
-let totalInputCharacter = 0;
+
     /**
      * Function incrSec()
     * incrSec is incrementing second
@@ -77,8 +85,6 @@ let totalInputCharacter = 0;
         totalInputCharacter = totalInputCharacter + 1;
         var charCountString = new String("Total char presses: " + totalInputCharacter);
         document.getElementById("trackerInside4").innerHTML = charCountString;
-        
-
     }
 
     function trackerCaller()

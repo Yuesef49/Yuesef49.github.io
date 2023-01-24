@@ -341,8 +341,13 @@
 				display: none;
 			}
 			#trackerInside, #trackerInside2, #trackerInside3, #trackerInside4{
-				font-size: 30px;
-				color: white;
+				font-size: 18px;
+			background-color: rgba(255, 255, 255, 0.1);
+			width: 18%;
+			margin: 1em auto;
+			padding: 1em;
+			align-self: center;
+			text-align: center;
 			}
 			
 
@@ -353,7 +358,6 @@
     <body id="body1" onload="tracker()">
 	 <div id="broPlsBeClickable">
 		<div id="tracker">
-			<p>Tracker Test Hi</p>
 			<p id="trackerInside"></p>
 			<p id="trackerInside2"></p>
 			<p id="trackerInside3"></p>
@@ -366,8 +370,8 @@
             <a href="yourList.html">Your List</a>
         </nav>
 
-		<!-- return !( submitChecker() && trackerCaller() ) because otherwise it's refresing the page. We are losingthe content-->
-        <form id="formID" class="formFillPlace" onsubmit="return !( submitChecker() && trackerCaller() )">  
+		<!-- !!!!!!!  submitChecker() && trackerCaller(); return false because otherwise it's refresing the page. We are losing the content to display for part 2 !!!!!! -->
+        <form id="formID" class="formFillPlace" onsubmit="submitChecker() && trackerCaller(); return false">  
             <label for="Username">
 				<hr style="visibility:hidden;" />  <!--Knk bu ne la?-->
                 <b>Username</b>
