@@ -14,7 +14,7 @@
             input[type=text], input[type=password], input[type=email]  {
                 width: 95%;
                 padding: 15px;
-                margin: 5px 0 22px 3px;
+                margin: 5px 0 22px 0px;
                 display: inline-block;
                 border: none;
                 background: #f1f1f1;
@@ -350,40 +350,42 @@
             <label for="Username">
                 <b>Username</b>
             </label>
-                    <input id="signUpUsername" type="text" placeholder="username (userID)" name="username" style="margin-bottom: 0px; " pattern="[a-zA-z]{5,12}">
+                    <input pattern="^[A-Z][a-zA-Z0-9_]{4,11}[0-9|_|@|#|$|%|^|&|*]$" id="signUpUsername" type="text" placeholder="username (userID)" name="username">
             <label for="Password">
                 <b>Password</b>
             </label>
-            <input id="signUpPassword" type="password" placeholder="password" name="password" style="margin-bottom: 0;" required="" minlength="12">
+            <input pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])[A-Za-z0-9!@#\$%\^&\*]{12,}$" id="signUpPassword" type="password" placeholder="password" name="password">
             <label for="Name">
                 <b>Name</b>
             </label>
-			<input id="signUpName" type="text" placeholder="your name and surname" name="name" style="margin-bottom: 0;" required>
+			<input pattern="^[A-Za-z]{1,}$" id="signUpName" type="text" placeholder="your name and surname" name="name">
             <label for="Address">
                 <b>Address</b>
             </label>
-            <input id="signUpAddress" type="text" placeholder="eg: Mekelweg 4, Delft" name="Address" style="margin-bottom: 0;">
+            <input pattern="^.+$" id="signUpAddress" type="text" placeholder="eg: Mekelweg 4, Delft" name="Address">
             <label for="Country">
                 <b>Country</b>
             </label>
-            <input id="signUpCountry" type="text" placeholder="eg: Netherlands" name="Country" style="margin-bottom: 0;" required>
+            <input id="signUpCountry" type="text" placeholder="eg: Netherlands" name="Country">
             <label for="ZipCode">
                 <b>Zip Code</b>
             </label>
-            <input id="signUpZipcode" type="text" placeholder="eg: 1234AD" name="ZipCode" style="margin-bottom: 0;" required minlength="6">
+            <input id="signUpZipcode" type="text" placeholder="eg: 1234AD" name="ZipCode">
 
 			<label for="Language">
                 <b>Language</b>
             </label>
-            <input id="signUpLanguage" type="text" placeholder="eg: English, Dutch..." name="Language" style="margin-bottom: 0;" required>
+            <input pattern="^.+$" id="signUpLanguage" type="text" placeholder="eg: English, Dutch..." name="Language">
+            
             <label for="Email">
                 <b>Email</b>
             </label>
-            <input id="signUpEmail" type="email" placeholder="eg: example@gmail.com" name="Email" style="margin-bottom: 0;" required>
-			<label for="About">
+            <input pattern="^[A-Za-z!@#\$%\^&\*]+[@][A-Za-z]+[.]][A-Za-z]+$" id="signUpEmail" type="email" placeholder="eg: example@gmail.com" name="Email">
+			
+            <label for="About">
                 <b>About/Bio</b>
             </label>
-            <input id="signUpAbout" type="text" placeholder="Info about yourself..." name="About" style="margin-bottom: 0;">
+            <input id="signUpAbout" type="text" placeholder="Info about yourself..." name="About">
             <label for="Gender">
                 <b>Gender:</b>
             </label>
@@ -393,7 +395,7 @@
             <label for="female">Female</label>
             <input type="radio" class="other" name="Gender">
             <label for="other">Other</label><br>
-			<button type="submit" class="button submitButton" onclick="document.getElementById('tracker').style.display='contents'" id="signUpSubmitButton">Submit</button>	   
+			<button type="submit" class="button submitButton" onsubmit="document.getElementById('tracker').style.display='contents'" id="signUpSubmitButton">Submit</button>	   
     	</form>
 	 </div>
 
