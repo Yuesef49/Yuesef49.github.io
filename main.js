@@ -404,7 +404,7 @@ function aboutCheck(about)
     aboutBar.style.backgroundColor= "rgb(170, 255, 128)";
     return true;
   }
-  else if(about.length > 50)
+  else if(about.length >= 50)
   {
     aboutText.innerHTML = "Can it be little shorter please ( To not to destroy alert box :) )!";
     aboutBar.style.backgroundColor= "rgba(255, 128, 128, 1)";
