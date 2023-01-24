@@ -1,7 +1,6 @@
 function submitChecker()
 {
 
-
   usernameChecker(document.getElementById("signUpUsername").value); 
   passwordChecker(document.getElementById("signUpPassword").value); 
   fullnameChecker(document.getElementById("signUpName").value);

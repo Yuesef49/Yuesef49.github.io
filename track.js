@@ -1,16 +1,17 @@
+let seconds = 0;
+let minutes = 0;
+let keyPressAmount = -1;
+let totalInputCharacter = -1;  
+// Knk bunlari -1 yaptim cunku dumduz submite tiklayinca hic key basmadan 1 olarak ekrana cikiyor. cunku fonksiyonlar hep +1 e odakli
+//Y: Mantikli kanka
+
+
 /**
  * Tracker:
  * This function is called or "unloaded" to body
  * of the signUp page. So the events start via
  * this function
  */
-
-let seconds = 0;
-let minutes = 0;
-let keyPressAmount = -1;
-let totalInputCharacter = -1;  
-// Knk bunlari -1 yaptim cunku dumduz submite tiklayinca hic key basmadan 1 olarak ekrana cikiyor. cunku fonksiyonlar hep +1 e odakli
-
 function tracker(){ 
     let a = 0;      //variable for mouse click counter
     
