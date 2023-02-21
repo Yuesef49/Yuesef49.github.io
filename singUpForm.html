@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head id="head1">
-		<script src="track.js"></script> 
         <style>
             body {
              background-color: rgb(188, 229, 242);
@@ -121,7 +120,7 @@
 		
     </head>
     
-    <body id="body1" onload="tracker()">
+    <body id="body1" onload="">
 
         <nav class="navigator">
             <a href="home.html" >Home</a> |
@@ -137,24 +136,23 @@
 		</div>
 
 		<!-- !!!!!!!  submitChecker() && trackerCaller(); return false because otherwise it's refresing the page. We are losing the content to display for part 2 !!!!!! -->
-        <form id="formID" class="formFillPlace" onsubmit=" trackerCaller(); return false">  
+        <form id="formID" class="formFillPlace" onsubmit="userInfoAlert();">  
             <label for="Username">
-				<hr style="visibility:hidden;" />  <!--Knk bu ne la?-->
                 <b>Username</b>
             </label>
-                    <input id="signUpUsername" type="text" placeholder="username (userID)" name="username" style="margin-bottom: 0px; " required="" minlength="5" maxlength="12">
+                    <input id="signUpUsername" type="text" placeholder="Your username must be of length 5 to 12, must start with a capital letter and end with a number or special character" name="username" style="margin-bottom: 0px; " required="" minlength="5" maxlength="12">
             <label for="Password">
                 <b>Password</b>
             </label>
-            <input id="signUpPassword" type="password" placeholder="password" name="password" style="margin-bottom: 0;" required="" minlength="12">
+            <input id="signUpPassword" type="password" placeholder="Password needs to be at least length of 12, must include a combination of uppercase letters, lowercase letters, numbers, and symbols" name="password" style="margin-bottom: 0;" required="" minlength="12">
             <label for="Name">
                 <b>Name</b>
             </label>
-			<input id="signUpName" type="text" placeholder="your name and surname" name="name" style="margin-bottom: 0;" required>
+			<input id="signUpName" type="text" placeholder="Your name and surname. Must be alphabet only" name="name" style="margin-bottom: 0;" required>
             <label for="Address">
                 <b>Address</b>
             </label>
-            <input id="signUpAddress" type="text" placeholder="eg: Mekelweg 4, Delft" name="Address" style="margin-bottom: 0;">
+            <input id="signUpAddress" type="text" placeholder="eg: Mekelweg 4, Delft (Optional)" name="Address" style="margin-bottom: 0;">
             <label for="Country">
                 <b>Country</b>
             </label>
@@ -162,7 +160,7 @@
             <label for="ZipCode">
                 <b>Zip Code</b>
             </label>
-            <input id="signUpZipcode" type="text" placeholder="eg: 1234AD" name="ZipCode" style="margin-bottom: 0;" required minlength="6">
+            <input id="signUpZipcode" type="text" placeholder="Must consist of four numbers and two letters eg: 1234AD" name="ZipCode" style="margin-bottom: 0;" required minlength="6">
 
 			<label for="Language">
                 <b>Language</b>
@@ -185,8 +183,48 @@
             <label for="female">Female</label>
             <input type="radio" class="other" name="Gender">
             <label for="other">Other</label><br>
-			<button type="submit" class="button submitButton" onclick="document.getElementById('tracker').style.display='contents'" id="signUpSubmitButton">Submit</button>	   
+			<button type="submit" class="button submitButton" id="signUpSubmitButton">Submit</button>	   
     	</form>
 	 </div>
+	 <script>
+		function userInfoAlert() {
+			var msg = new String();
+			msg = "Submition is done, informations: " + "\n" + 
+    		"Username: " + document.getElementById("signUpUsername").value + "\n" +
+    		"Password: " + document.getElementById("signUpPassword").value + "\n" +
+    		"Name: " + document.getElementById("signUpName").value + "\n";
+    		msg = msg +"Address: " + document.getElementById("signUpAddress").value + "\n";    	
+    		msg = msg + "Country: " + document.getElementById("signUpCountry").value + "\n" +
+    		"ZipCode: " + document.getElementById("signUpZipcode").value + "\n" +
+    		"Email: " + document.getElementById("signUpEmail").value + "\n" +
+ 			"Language: " + document.getElementById("signUpLanguage").value + "\n" +
+    		"Gender: " + genderGetter() + "\n";
+      		msg = msg + "About/Bio: " + document.getElementById("signUpAbout").value;
+    		alert(msg);
+		}
+		function genderGetter()
+		{
+ 		if(true)
+ 		{
+   		var radios = document.getElementsByName('Gender');
+  				for (var i = 0; i < radios.length; i++) {
+   				if (radios[i].checked) {
+     		     	if(i == 0)
+          				{
+            				return "Male";
+        			  	}			
+    	     		 		if(i == 1)
+          				{	
+          				  	return "Female";
+          				}
+         					if(i == 2)
+         				{
+           				 return "Attack Helicopter";
+          				}
+      			}
+  			}
+ 		}
+		}
+	 </script>
     </body>
 </html>

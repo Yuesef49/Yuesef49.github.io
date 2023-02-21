@@ -138,31 +138,32 @@
 		</div>
 
 		<!-- !!!!!!!  submitChecker() && trackerCaller(); return false because otherwise it's refresing the page. We are losing the content to display for part 2 !!!!!! -->
-        <form id="formID" class="formFillPlace" onsubmit="trackerCaller(); return false">  
+        <form id="formID" class="formFillPlace" onsubmit="trackerCaller() && userInfoAlert(); return false">  
             <label for="Username">
                 <b>Username</b>
             </label>
-                    <input required pattern="^[A-Z][a-zA-Z0-9_]{4,11}[0-9|_|@|#|$|%|^|&|*]$" id="signUpUsername" type="text" placeholder="username (userID)" name="username">
+                    <input required pattern="^[A-Z][a-zA-Z0-9_]{4,11}[0-9|_|@|#|$|%|^|&|*]$" id="signUpUsername" type="text" placeholder="Your username must be of length 5 to 12, must start with a capital letter and end with a number or special character" name="username">
             <label for="Password">
                 <b>Password</b>
             </label>
-            <input required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])[A-Za-z0-9!@#\$%\^&\*]{12,}$" id="signUpPassword" type="password" placeholder="password" name="password">
+            <input required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])[A-Za-z0-9!@#\$%\^&\*]{12,}$" id="signUpPassword" type="password" placeholder="Password needs to be at least length of 12, must include a combination of uppercase letters, lowercase letters, numbers, and symbols" name="password">
             <label for="Name">
                 <b>Name</b>
             </label>
-			<input required pattern="^[A-Za-z]{1,}$" id="signUpName" type="text" placeholder="your name and surname" name="name">
+			<input required pattern="^[A-Za-z]{1,}$" id="signUpName" type="text" placeholder="Your name and surname. Must be alphabet only" name="name">
             <label for="Address">
                 <b>Address</b>
             </label>
-            <input id="signUpAddress" type="text" placeholder="eg: Mekelweg 4, Delft" name="Address">
+            <input id="signUpAddress" type="text" placeholder="eg: Mekelweg 4, Delft (Optional)" name="Address">
             <label for="Country">
                 <b>Country</b>
             </label>
             <input required pattern="^.+$" id="signUpCountry" type="text" placeholder="eg: Netherlands" name="Country">
+
             <label for="ZipCode">
                 <b>Zip Code</b>
             </label>
-            <input required pattern="^.+$" id="signUpZipcode" type="text" placeholder="eg: 1234AD" name="ZipCode">
+            <input required pattern="^.+$" id="signUpZipcode" type="text" placeholder="Must consist of four numbers and two letters eg: 1234AD" name="ZipCode">
 
 			<label for="Language">
                 <b>Language</b>
@@ -191,6 +192,46 @@
     	</form>
 	 </div>
 
-
+	 <script>
+		function userInfoAlert() {
+			var msg = "Submition is done, informations: " + "\n" + 
+    		"Username: " + document.getElementById("signUpUsername").value + "\n" +
+    		"Password: " + document.getElementById("signUpPassword").value + "\n" +
+    		"Name: " + document.getElementById("signUpName").value + "\n";
+    		msg = msg +"Address: " + document.getElementById("signUpAddress").value + "\n";    	
+    		msg = msg + "Country: " + document.getElementById("signUpCountry").value + "\n" +
+    		"ZipCode: " + document.getElementById("signUpZipcode").value + "\n" +
+    		"Email: " + document.getElementById("signUpEmail").value + "\n" +
+ 			"Language: " + document.getElementById("signUpLanguage").value + "\n" +
+    		"Gender: " + genderGetter() + "\n";
+      		msg = msg + "About/Bio: " + document.getElementById("signUpAbout").value;
+			
+    		alert(msg);
+		}
+		function genderGetter()
+		{
+ 		if(true)
+ 		{
+   		var radios = document.getElementsByName('Gender');
+  				for (var i = 0; i < radios.length; i++) {
+   				if (radios[i].checked) {
+     		     	if(i == 0)
+          				{
+            				return "Male";
+        			  	}			
+    	     		 		if(i == 1)
+          				{	
+          				  	return "Female";
+          				}
+         					if(i == 2)
+         				{
+           				 return "Attack Helicopter";
+          				}
+      			}
+  			}
+ 		}
+		}
+    	
+	 </script>
     </body>
 </html>
